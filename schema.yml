@@ -1,0 +1,365 @@
+openapi: 3.0.3
+info:
+  title: Django Game Browser
+  version: 3.1.0
+  description: Project Description
+paths:
+  /accounts/token-auth/:
+    get:
+      operationId: accounts_token_auth_retrieve
+      tags:
+      - accounts
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthToken'
+          description: ''
+    post:
+      operationId: accounts_token_auth_create
+      tags:
+      - accounts
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AuthToken'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AuthToken'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthToken'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthToken'
+          description: ''
+  /game/{id_arg}/{game}:
+    get:
+      operationId: game_retrieve
+      parameters:
+      - in: path
+        name: game
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: id_arg
+        schema:
+          type: string
+        required: true
+      tags:
+      - game
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: game_create
+      parameters:
+      - in: path
+        name: game
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: id_arg
+        schema:
+          type: string
+        required: true
+      tags:
+      - game
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: game_update
+      parameters:
+      - in: path
+        name: game
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: id_arg
+        schema:
+          type: string
+        required: true
+      tags:
+      - game
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: game_destroy
+      parameters:
+      - in: path
+        name: game
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: id_arg
+        schema:
+          type: string
+        required: true
+      tags:
+      - game
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /list_games/:
+    get:
+      operationId: list_games_list
+      tags:
+      - list_games
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Game'
+          description: ''
+    post:
+      operationId: list_games_create
+      tags:
+      - list_games
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Game'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Game'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Game'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Game'
+          description: ''
+  /user/{id_arg}:
+    get:
+      operationId: user_retrieve
+      parameters:
+      - in: path
+        name: id_arg
+        schema:
+          type: string
+        required: true
+      tags:
+      - user
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    post:
+      operationId: user_create
+      parameters:
+      - in: path
+        name: id_arg
+        schema:
+          type: string
+        required: true
+      tags:
+      - user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/User'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    put:
+      operationId: user_update
+      parameters:
+      - in: path
+        name: id_arg
+        schema:
+          type: string
+        required: true
+      tags:
+      - user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/User'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/User'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    delete:
+      operationId: user_destroy
+      parameters:
+      - in: path
+        name: id_arg
+        schema:
+          type: string
+        required: true
+      tags:
+      - user
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    AuthToken:
+      type: object
+      properties:
+        username:
+          type: string
+          writeOnly: true
+        password:
+          type: string
+          writeOnly: true
+        token:
+          type: string
+          readOnly: true
+      required:
+      - password
+      - token
+      - username
+    CivilStateEnum:
+      enum:
+      - SG
+      - MA
+      - WI
+      type: string
+      description: |-
+        * `SG` - single
+        * `MA` - married
+        * `WI` - widow
+    Game:
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 15
+        developer:
+          type: string
+          maxLength: 15
+      required:
+      - developer
+      - name
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 30
+        administrator:
+          type: boolean
+        age:
+          type: integer
+          maximum: 100
+          minimum: 18
+        password:
+          type: string
+          maxLength: 8
+        civil_state:
+          $ref: '#/components/schemas/CivilStateEnum'
+        games:
+          type: array
+          items:
+            type: string
+      required:
+      - age
+      - civil_state
+      - games
+      - id
+      - name
+      - password
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
