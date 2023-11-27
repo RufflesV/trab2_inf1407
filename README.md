@@ -15,6 +15,7 @@ NÃO FUNCIONA:
   - Não foi implementado o token de autorização, logo não há endpoint protegido
   -Vale a pena apontar que no POST do modelo 'User' o argumento "id_arg" da URL não será usado.
   -Por algum motivo, não foi possível criar um css para initial_user.html que funcionasse da maneira esperada
+  -Ao hospedar o site e tentar deixar o frontend disponível, nos deparamos com o problema que o css não era carregado. o erro: Refused to apply style from 'https://jpraffo.pythonanywhere.com/base_style' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled
 
 Manual do usuário:
 
