@@ -20,3 +20,4 @@ Manual do usuário:
 
 Acessar 'start_page.html' e decidir se irá para login ou cadastro, ao selecionar qualquer uma das opções será direcionado aos htmls necessários.
 Não acessar initial_user.html ou edit.html sem passar pelo login.
+Para acessar o swagger: https://jpraffo.pythonanywhere.com/api/swagger
