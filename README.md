@@ -21,4 +21,17 @@ Manual do usuário:
 
 Acessar 'start_page.html' e decidir se irá para login ou cadastro, ao selecionar qualquer uma das opções será direcionado aos htmls necessários.
 Não acessar initial_user.html ou edit.html sem passar pelo login.
+
+
+
 Para acessar o swagger: https://jpraffo.pythonanywhere.com/api/swagger
+
+Adicionado depois:
+
+![image](https://github.com/RufflesV/trab2_inf1407/assets/99509985/7dd7908d-55a5-48c0-9aef-00ad4656acef)
+
+![image](https://github.com/RufflesV/trab2_inf1407/assets/99509985/65aef62d-f8a2-4dd1-9d63-ec766d8e884f)
+
+![image](https://github.com/RufflesV/trab2_inf1407/assets/99509985/63e3ce59-dc91-40a3-bd5d-c96d1088803b)
+
+
